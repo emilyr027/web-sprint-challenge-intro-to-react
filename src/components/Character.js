@@ -23,16 +23,16 @@ const Name = styled.h2`
 `
 
 const Character = (props) => {
-    const {  info } = props;
+    console.log(props);
 
 
     return(
         <StyledStarWars>
-            <Name>{props.starWarsObj.name}</Name>
-            <h3> Height: {props.starWarsObj.height} </h3>
-            <h3> Hair Color: {props.starWarsObj.hair_color} </h3>
-            <h3> Eye Color: {props.starWarsObj.eye_color} </h3>
-            <h3> Birth Year: {props.starWarsObj.birth_year} </h3>
+            <Name>{props.name}</Name>
+            <h3> Height: {props.height} </h3>
+            <h3> Hair Color: {props.hair_color} </h3>
+            <h3> Eye Color: {props.eye_color} </h3>
+            <h3> Birth Year: {props.birth_year} </h3>
         </StyledStarWars>
     )
 }

@@ -20,31 +20,34 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
   const [starWarsObj, starWarsData] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
 
-  const characters = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 
 
   useEffect(() => {
-    characters.map(index => {
-      axios.get(`${BASE_URL}${API_KEY}${index}`)
+    // characters.map(index => 
+      axios.get(`${BASE_URL}${API_KEY}`)
       .then(response => { console.log(response)
-        starWarsData(response.data, 9);
+        starWarsData(response.data.results);
+        setIsLoading(false);
       })
       .catch(error => console.log(error));
-    })
-  }, []);
+    
+}, []);
 
 console.log(starWarsObj);
-console.log(characters);
 
 return (
   <div className="App">
       <h1 className="Header"> Star Wars Stats </h1>
 
-        {characters.map(() => {
-          return <Character starWarsObj={starWarsObj}/>
-        })}
+        { isLoading ? (
+          `Loading...`
+        ) : (
+        starWarsObj.map((item) => {
+          return <Character height={item.height}  name={item.name} hair_color={item.hair_color} eye_color={item.eye_color} birth_year={item.birth_year}/>
+        }))}
   </div>
 );
 }

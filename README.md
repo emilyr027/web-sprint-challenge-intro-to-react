@@ -30,6 +30,8 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+it's a JavaScript library that solves hte problems of better handling of dynamic data for faster response times. It helps things seem more simple. 
+
 1. Describe component state.
 
 1. Describe props.
